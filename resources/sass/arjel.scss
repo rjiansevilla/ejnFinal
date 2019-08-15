@@ -1,0 +1,15 @@
+.bg-active {
+    background-color: #054b45 !important;
+    color: #fff !important;
+}
+
+.item:hover {
+    background-color: #054b45 !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.scroll-body {
+    max-height: 375px;
+    overflow-y: auto;
+}

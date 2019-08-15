@@ -1,0 +1,75 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//FontAwesome
+@import '~font-awesome/scss/font-awesome';
+
+//DataTables Responsive
+@import '~datatables.net-dt/css/jquery.dataTables';
+
+//Select2
+@import '~select2/dist/css/select2.min.css';
+
+
+.navbar-laravel {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-nav {
+    display: block !important;
+}
+
+.navbar-custom-menu .navbar-nav > li {
+    padding: 0 10px;
+    position: relative;
+    float: left;
+}
+
+.skin-black .main-header>.logo, .skin-black .main-header .navbar {
+	background-color: rgb(5, 75, 69) !important;
+}
+
+.skin-black .main-header>.logo {
+	border-right: 0 !important;
+}
+
+.skin-black .main-header .navbar .nav>li>a
+{
+	color: #fff !important;
+}
+
+.skin-black .main-header .navbar .navbar-custom-menu .navbar-nav>li>a, .skin-black .main-header .navbar .navbar-right>li>a
+{
+	border-left: 0 !important;
+}
+
+.skin-black .main-header .navbar>.sidebar-toggle
+{
+	color: #fff !important;
+	border-right: 0 !important;
+	padding: 0;
+}
+
+.skin-black .main-header .navbar .nav>li>a:hover, .skin-black .main-header .navbar .nav>li>a:active, .skin-black .main-header .navbar .nav>li>a:focus, .skin-black .main-header .navbar .nav .open>a, .skin-black .main-header .navbar .nav .open>a:hover, .skin-black .main-header .navbar .nav .open>a:focus, .skin-black .main-header .navbar .nav>.active>a
+{
+	background: transparent !important;
+}
+.main-header .navbar .nav>li>a>.label {
+	top: 0 !important;
+	right: 17px !important;
+	border-radius: 8px !important;
+}
+
+@media (max-width: 991px) {
+	.navbar-custom-menu>.navbar-nav>li {
+	    position: relative !important;
+	}	
+}
