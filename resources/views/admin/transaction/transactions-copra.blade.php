@@ -40,7 +40,7 @@
                             <td>{{ $value['total_price'] }}</td>
                             <td>{{ $value['amount'] }}</td>
                             <td>
-                                <a href="{{ url('view-transaction.copra').'/'.$id }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a>
+                                <a href="{{ url('view-transaction').'/'.$id }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a>
                             </td>
                         </tr>
                         @endforeach

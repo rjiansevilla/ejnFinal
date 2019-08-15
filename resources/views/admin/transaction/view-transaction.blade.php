@@ -55,7 +55,7 @@
                             <td>{{ $data['transaction']['net'] }}</td>
                         </tr>
                         <tr>
-                            <td class="text-uppercase">Loss</td>
+                            <td class="text-uppercase">Moisture</td>
                             <td>{{ $data['transaction']['moisture'] }}</td>
                         </tr>
                         <tr>
@@ -103,12 +103,12 @@
 $(document).ready(function() {
 
 })
-// Printing 
+// Printing
 $('#print-window').click(function() {
     var printbutton = document.getElementById("print-window");
     var back = document.getElementById ("back-window");
     printbutton.style.visibility ='hidden';
-    back.style.visibility='hidden';     
+    back.style.visibility='hidden';
     window.print();
     location.reload();
 });
