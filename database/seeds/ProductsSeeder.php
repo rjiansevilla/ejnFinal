@@ -24,7 +24,7 @@ class ProductsSeeder extends Seeder
             [
                 "user_id" => '1',
                 "name" => 'Coffee',
-                "desc" => 'This is Coffe products.',
+                "desc" => 'This is Coffee products.',
                 "created_at" => date("Y-m-d H:i:s"),
                 "updated_at" => date("Y-m-d H:i:s")
             ],
