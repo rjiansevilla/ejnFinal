@@ -46,8 +46,7 @@
                             <a href="{{ url('/transactionsCopra').'/'.$productEncode }}" class="small-box-footer">More info<i class="fa fa-arrow-circle-right"></i></a>
                             @endif
                             <!-- Coffee -->
-                            @if ($productEncode =="Mi1Db2ZmZQ==" )
-                            This is a product
+                            @if ($productEncode =="Mi1Db2ZmZWU=" )
                             <a href="{{ url('/transactionsCoffee').'/'.$productEncode }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                             @endif
 
