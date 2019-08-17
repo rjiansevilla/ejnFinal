@@ -22,7 +22,7 @@
                             <td>Mobile</td>
                             <td>Email</td>
                             <td>Address</td>
-                            <td>Action</td>
+                            <!-- <td>Action</td> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -33,8 +33,8 @@
                             <td>{{ $value['email'] }}</td>
                             <td>{{ $value['address'] }}</td>
                             <td>
-                                <a href="{{ url('view-agent').'/'.$value['id'] }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a>
-                                <a href="{{ url('edit-agent').'/'.$value['id'] }}" class="btn btn-info btn-sm"><span class="fa fa-edit"></span></a>
+                                <!-- <a href="{{ url('view-agent').'/'.$value['id'] }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a>
+                                <a href="{{ url('edit-agent').'/'.$value['id'] }}" class="btn btn-info btn-sm"><span class="fa fa-edit"></span></a> -->
                                 <!-- <a href="{{ url('delete-agent').'/'.$value['id'] }}" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a> -->
                             </td>
                         </tr>
