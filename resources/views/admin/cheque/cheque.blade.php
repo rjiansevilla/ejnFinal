@@ -2,7 +2,7 @@
 <html>
     <head>
         <style>
-    @page { size: 7.62cm 20.32cm landscape; }
+    @page { size: 7.62cm 21.59cm landscape; }
 
     table
         {
@@ -27,7 +27,7 @@
             <tbody>
                 <tr>
                     <td></td>
-                    <td >{{ $date }}</td>
+                    <td align="left">{{ $date }}</td>
                 </tr>
                 <tr>
                     <td>*** {{ $cheque_no }} ***</td>
