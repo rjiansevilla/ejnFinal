@@ -39,7 +39,7 @@
                             <td>{{ $value['total_price'] }}</td>
                             <td>{{ $value['amount'] }}</td>
                             <td>
-                                <a href="{{ url('view-transaction').'/'.$value['id'] }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a>
+                               <!--  <a href="{{ url('view-transaction').'/'.$value['id'] }}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span></a> -->
                                 @if($value['is_issue'] == 0)
                                 <a href="{{ url('issue-cheque').'/'.$value['id'] }}" class="btn btn-info btn-sm">Issue Cheque</a>
                                 @else
