@@ -20,6 +20,7 @@
         <div class="box box-primary">
             <div class="box-body p-3">
                  <h2 style="margin-bottom: -20px; margin-top: -10px;">New Trading Center</h2> <br><p>Lamitan City Basilan</p>
+                 
                 <table class="table table-bordered table-sm">
                     <tbody>
                         <tr>
@@ -43,7 +44,7 @@
                             <td>{{ $data['transaction']['quality'] }}</td>
                         </tr>
                         <tr>
-                            <td class="text-uppercase">Total Kilos</td>
+                            <td class="text-uppercase">Total Sacks</td>
                             <td>{{ $data['transaction']['sacks'] }}</td>
                         </tr>
                         <tr>
@@ -55,22 +56,22 @@
                             <td>{{ $data['transaction']['net'] }}</td>
                         </tr>
                         <tr>
-                            <td class="text-uppercase">Loss</td>
+                            <td class="text-uppercase">Moisture</td>
                             <td>{{ $data['transaction']['moisture'] }}</td>
                         </tr>
                         <tr>
-                            <td class="text-uppercase">NTC</td>
+                            <td class="text-uppercase">Tare</td>
                             <td>{{ $data['transaction']['ntc'] }}</td>
                         </tr>
                         <tr>
                             <td class="text-uppercase">Others</td>
                             <td>{{ $data['transaction']['others'] }}</td>
                         </tr>
-<!--                         <tr>
+                        <tr>
                             <td class="text-uppercase">Discount</td>
                             <td>{{ $data['transaction']['discount'] }}</td>
                         </tr>
- -->                        <tr>
+                        <tr>
                             <td class="text-uppercase">Unit Price</td>
                             <td>Php {{ $formattedUnitPrice }}</td>
                         </tr>
@@ -103,12 +104,12 @@
 $(document).ready(function() {
 
 })
-// Printing 
+// Printing
 $('#print-window').click(function() {
     var printbutton = document.getElementById("print-window");
     var back = document.getElementById ("back-window");
     printbutton.style.visibility ='hidden';
-    back.style.visibility='hidden';     
+    back.style.visibility='hidden';
     window.print();
     location.reload();
 });

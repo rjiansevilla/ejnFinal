@@ -194,7 +194,7 @@ class TransactionController extends Controller
             "header" => "Transaction Form",
             "title" => "Transaction Form",
             "stations" => $this->product->getStations(),
-            "date" => date("d F, y"),
+            "date" => date("d F, Y"),
             "product_id" => $decodeId
         ];
 
@@ -207,7 +207,7 @@ class TransactionController extends Controller
             "header" => "Transaction Form",
             "title" => "Transaction Form",
             "stations" => $this->product->getStations(),
-            "date" => date("d F, y"),
+            "date" => date("d F, Y"),
             "product_id" => $decodeId
         ];
 
@@ -220,7 +220,7 @@ class TransactionController extends Controller
             "header" => "Transaction Form",
             "title" => "Transaction Form",
             "stations" => $this->product->getStations(),
-            "date" => date("d F, y"),
+            "date" => date("d F, Y"),
             "product_id" => $decodeId
         ];
 

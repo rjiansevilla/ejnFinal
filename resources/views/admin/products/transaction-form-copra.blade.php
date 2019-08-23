@@ -43,8 +43,8 @@
                             @endif
                         </div>
                         <div class="form-group mb-1">
-                            <label for="" class="control-label mb-0">Total Kilos <span class="text-danger"> *</span></label>
-                            <input type="Number" name="sacks" value="{{ old('sacks') }}" id="sacks" class="form-control unit-price" placeholder="0" min="0" required>
+                            <label for="" class="control-label mb-0">Total No. Sacks <span class="text-danger"> *</span></label>
+                            <input type="text" name="sacks" value="{{ old('sacks') }}" id="sacks" class="form-control unit-price" placeholder="0" min="0" required>
                             @if ($errors->has('sacks'))
                             <div class="error text-danger">{{ $errors->first('sacks') }}</div>
                             @endif
@@ -63,14 +63,21 @@
                         </div>
                         <div class="form-group mb-1">
                             <label for="" class="control-label mb-0">Gross Weight <span class="text-danger"> *</span></label>
-                            <input type="number" name="gross_weight" value="{{ old('gross_weight') }}" class="form-control" placeholder="0.00" min="0" required>
+                            <input type="text" id="gross_weight" name="gross_weight" value="{{ old('gross_weight') }}" class="form-control" placeholder="0.00" min="0" required>
                             @if ($errors->has('gross_weight'))
                             <div class="error text-danger">{{ $errors->first('gross_weight') }}</div>
                             @endif
                         </div>
                         <div class="form-group mb-1">
+                            <label for="" class="control-label mb-0">Tare <span class="text-danger"> *</span></label>
+                            <input type="text"  name="ntc" id="ntc" value="{{ old('ntc') }}" class="form-control ntc" placeholder="0.00">
+                            @if ($errors->has('ntc'))
+                            <div class="error text-danger">{{ $errors->first('ntc') }}</div>
+                            @endif
+                        </div>
+                        <div class="form-group mb-1">
                             <label for="" class="control-label mb-0">Net Weight <span class="text-danger"> *</span></label>
-                            <input type="number" name="net_weight" value="{{ old('net_weight') }}" class="form-control" placeholder="0.00" min="0" required>
+                            <input type="text" id="net_weight" name="net_weight" value="{{ old('net_weight') }}" class="form-control net_weight" placeholder="0.00" min="0" disabled="">
                             @if ($errors->has('net_weight'))
                             <div class="error text-danger">{{ $errors->first('net_weight') }}</div>
                             @endif
@@ -328,27 +335,27 @@
                     <div class="col-md-6">
                         <div class="form-group mb-1">
                             <label for="" class="control-label mb-0">Unit Price <span class="text-danger"> *</span></label>
-                            <input type="number" name="unit_price" value="{{ old('unit_price') }}" id="unit_price" class="form-control unit-price" placeholder="0.00" min="0" required>
+                            <input type="text" name="unit_price" value="{{ old('unit_price') }}" id="unit_price" class="form-control unit-price" placeholder="0.00" min="0" required>
                             @if ($errors->has('unit_price'))
                             <div class="error text-danger">{{ $errors->first('unit_price') }}</div>
                             @endif
                         </div>
                         <div class="form-group mb-1">
                             <label for="" class="control-label mb-0">Total Price <span class="text-danger"> *</span></label>
-                            <input type="hidden" name="total_price" value="{{ old('total_price') }}" id="total_price">
-                            <input type="text"  class="form-control" placeholder="0.00" id="total" disabled>
+                            <input type="hidden" id="total_price" name="total_price" value="{{ old('total_price') }}" >
+                            <input type="text"  class="form-control total_price" placeholder="0.00" id="total" disabled>
                             @if ($errors->has('total_price'))
                             <div class="error text-danger">{{ $errors->first('total_price') }}</div>
                             @endif
                         </div>
                         <h5 class="text-muted text-uppercase">Less</h5>
-                        <div class="form-group mb-1">
-                            <label for="" class="control-label mb-0">NTC <span class="text-danger"> *</span></label>
-                            <input type="text" name="ntc" id="ntc" value="{{ old('ntc') }}" class="form-control less" placeholder="0.00">
+                       <!--  <div class="form-group mb-1">
+                            <label for="" class="control-label mb-0">Tare <span class="text-danger"> *</span></label>
+                            <input type="text"  name="ntc" id="ntc" value="{{ old('ntc') }}" class="form-control ntc" placeholder="0.00">
                             @if ($errors->has('ntc'))
                             <div class="error text-danger">{{ $errors->first('ntc') }}</div>
                             @endif
-                        </div>
+                        </div> -->
                         <div class="form-group mb-1">
                             <label for="" class="control-label mb-0">Others</label>
                             <input type="text" id="others" name="others" value="{{ old('others') }}" class="form-control less" placeholder="0.00">
@@ -364,7 +371,7 @@
                         <hr>
                         <div class="form-group mb-1">
                             <input type="hidden" name="amount" value="0" id="amount">
-                            <h5 class="text-muted font-weight-bold d-inline">TOTAL: </h5>
+                            <h5 class="text-muted font-weight-bold d-inline">TOTAL AMOUNT: </h5>
                             <h4 class="font-weight-bold float-right d-inline" id="total_amount">Php 0.00</h4>
                         </div>
                     </div>
@@ -425,16 +432,24 @@ $(document).ready(function() {
 
     // Less
     $('.less').on('keyup', function() {
-        var ntc = $('input[name="ntc"]').val() || 0;
+        // var ntc = $('input[name="ntc"]').val() || 0;
         var others = $('input[name="others"]').val() || 0;
         var discount = $('input[name="discount"]').val() || 0;
         var totalPrice = $('input[name="total_price"]').val();
-        less = parseInt(ntc) + parseInt(discount) + parseInt(others);
+        less =  parseInt(discount) + parseInt(others);
         amount = totalPrice - less;
         $('#total_amount').html(amount.toFixed(2));
         $('#amount').val(amount.toFixed(2));
        
     })
+
+    //NetWeight Computation
+    $('.ntc').on("keyup", function() {
+         var gross = $('input[name="gross_weight"]').val();
+         var tare = $('input[name="ntc"]').val();
+         weight = gross - tare ;
+         $('#net_weight').val(weight.toFixed(2));
+     })
 
     // Moisture
     $('#moisture').on('change', function() {
@@ -446,12 +461,12 @@ $(document).ready(function() {
     // Compute total price
     $('.unit-price').on("keyup", function() {
         var unit = $('input[name="unit_price"]').val();
-        var sacks = $('input[name="sacks"]').val();
-        var ntc = $('input[name="ntc"]').val();
+        var net = $('input[name="net_weight"]').val();
+        // var ntc = $('input[name="ntc"]').val();
         var others = $('input[name="others"]').val();
         var discount = $('input[name="discount"]').val();
-        total = (unit * sacks);
-        less = ntc + others + discount;
+        total = (unit * net);
+        less =  others + discount;
         $('#total_price').val(total);
         $('#total').val(total);
         amount = total - less;

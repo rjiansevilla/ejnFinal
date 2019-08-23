@@ -6,12 +6,12 @@
 
     table
         {
-            width: 750px;
+            width: 950px;
             font: 16px Calibri;
         }
         table, th, td
         {
-            /* border:1px solid black; */
+             /*border:1px solid black;*/ 
             border-collapse: collapse;
             border-spacing: 5px 10px;
 
@@ -32,14 +32,14 @@
             <tbody>
                 <tr>
                     <td></td>
-                    <td>{{ $date }}</td>
+                    <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $date }}</td>
                 </tr>
                 <tr>
-                    <td>*** {{ $cheque_no }} ***</td>
-                    <td >*** {{ $formattedNum }} ***</td>
+                    <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *** {{ $cheque_no }} ***</td>
+                    <td >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *** {{ $formattedNum }} ***</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><br>*** {{ $words }} ***</td>
+                    <td colspan="2"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;*** {{ $words }} ***</td>
 
                 </tr>
             </tbody>

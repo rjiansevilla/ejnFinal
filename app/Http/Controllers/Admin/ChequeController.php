@@ -65,7 +65,7 @@ class ChequeController extends Controller
             $this->transaction->update($request['transaction_id'], ["is_issue" => 1]);
 
             $pdfData = [
-                "date" => date("d F, y"),
+                "date" => date("d F, Y"),
                 "amount" => $request['amount'],
                 "cheque_no" => $request['agent'],
                 "words" => $request['amount_words']

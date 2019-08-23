@@ -53,7 +53,7 @@ class ChequeServices extends Service
             foreach ($data as $row) {
                 $arrData[] = [
                     "cheque_no" => $row->cheque_no,
-                    "date" => date('d F, Y', strtotime($row->created_at)),
+                    "date" => date('d F, YY', strtotime($row->created_at)),
                     "amount" => $row->amount,
                     "payee" => $row->transaction->agent->name
                 ];
@@ -81,7 +81,7 @@ class ChequeServices extends Service
             "bank" => $row[0]->bank->name,
             "cheque_no" => $row[0]->cheque_no,
             "amount" => $row[0]->amount,
-            "date" => date("d F, Y", strtotime($row[0]->created_at))
+            "date" => date("d F, YY", strtotime($row[0]->created_at))
         ];
         
         return $arrVoucher;
