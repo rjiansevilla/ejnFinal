@@ -209,6 +209,7 @@ $(document).ready(function() {
          var net = $('input[name="net_weight"]').val();
          moisture = gross - net ;
          $('#moisture').val(moisture.toFixed(2));
+        
      })
 
     // Compute total price

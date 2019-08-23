@@ -19,8 +19,7 @@
     <div class="col-md-5">
         <div class="box box-primary">
             <div class="box-body p-3">
-                 <h2 style="margin-bottom: -20px; margin-top: -10px;">New Trading Center</h2> <br><p>Lamitan City Basilan</p>
-                 
+                 <h2 style="margin-bottom: -20px; margin-top: -10px;">New Trading Center</h2> <br><p>Lamitan City Basilan <br> Copra Transaction</p>
                 <table class="table table-bordered table-sm">
                     <tbody>
                         <tr>

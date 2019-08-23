@@ -51,7 +51,7 @@ Route::namespace('Admin')->group(function(){
 		// View Transaction
 		Route::get('/view-transaction/{id}', 'TransactionController@viewTransaction')->name('view-transaction');
 		Route::get('/view-transaction.coffee/{id}', 'TransactionController@viewTransactionCoffee')->name('view-transaction.coffee');
-		Route::get('/view-transaction.copra/{id}', 'TransactionController@viewTransactionCoffee')->name('view-transaction.copra');
+		Route::get('/view-transaction.copra/{id}', 'TransactionController@viewTransactionCopra')->name('view-transaction.copra');
 
 		// POST
 		Route::post('/add-agent', 'TransactionController@addAgent')->name('add-agent');
